@@ -68,7 +68,7 @@ export default function ContactUs1() {
                 <h2 className="from-foreground text-gray-300 to-foreground/80 mb-2 bg-gradient-to-r bg-clip-text text-4xl font-bold tracking-tight  md:text-5xl">
                   Contact
                 </h2>
-                <span className="text-primary relative z-10 w-full text-4xl font-bold tracking-tight italic md:text-5xl">
+                <span className="bg-gradient-to-r from-rose-500 to-rose-700 bg-clip-text text-lg font-bold text-transparent relative z-10 w-full text-4xl font-bold tracking-tight italic md:text-5xl">
                   Us
                 </span>
                 <SparklesCore

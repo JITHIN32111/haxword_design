@@ -3,28 +3,55 @@ import { Menu, X, ChevronDown, ArrowRight, Sparkles } from 'lucide-react';
 
 const navItems = [
   { name: 'Home', href: '/' },
-  { name: 'Features', href: '/features' },
+  { name: 'Services', href: '/services' }, // Software development services
   {
-    name: 'Products',
-    href: '/products',
+    name: 'Solutions',
+    href: '/solutions',
     hasDropdown: true,
     dropdownItems: [
       {
-        name: 'Analytics',
-        href: '/analytics',
-        description: 'Track your metrics',
+        name: 'Web Development',
+        href: '/solutions/web-development',
+        description: 'Custom web applications tailored to your business',
       },
       {
-        name: 'Dashboard',
-        href: '/dashboard',
-        description: 'Manage your data',
+        name: 'Mobile Apps',
+        href: '/solutions/mobile-apps',
+        description: 'iOS and Android solutions',
       },
-      { name: 'Reports', href: '/reports', description: 'Generate insights' },
+      {
+        name: 'UI/UX Design',
+        href: '/solutions/ui-ux',
+        description: 'Modern interfaces with a user-first approach',
+      },
     ],
   },
-  { name: 'Pricing', href: '/pricing' },
-  { name: 'About', href: '/about' },
+  {
+    name: 'Institute',
+    href: '/institute',
+    hasDropdown: true,
+    dropdownItems: [
+      {
+        name: 'Courses',
+        href: '/institute/courses',
+        description: 'Frontend, Backend, Full-stack, DevOps & more',
+      },
+      {
+        name: 'Mentorship',
+        href: '/institute/mentorship',
+        description: 'One-on-one guidance from industry experts',
+      },
+      {
+        name: 'Live Projects',
+        href: '/institute/live-projects',
+        description: 'Real-world experience with company projects',
+      },
+    ],
+  },
+  { name: 'Careers', href: '/careers' },
+  { name: 'About Us', href: '/about' },
 ];
+
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -113,10 +140,15 @@ export default function Header() {
                 </button>
 
                 {item.hasDropdown && activeDropdown === item.name && (
-                  <div
-                    className={`absolute top-full left-0 mt-2 w-64 overflow-hidden rounded-xl border shadow-xl backdrop-blur-3xl transition-all duration-200 opacity-50`}
-                    style={{ transform: 'translateY(0) scale(1)' }}
-                  >
+               <div
+  className={`absolute top-full left-0 mt-2 w-64 overflow-hidden rounded-xl border shadow-xl transition-all duration-200 ${
+    theme === 'dark'
+      ? 'bg-black border-gray-700'
+      : 'bg-white border-gray-200'
+  }`}
+  style={{ transform: 'translateY(0) scale(1)' }}
+>
+
                     {item.dropdownItems?.map((dropdownItem) => (
                       <button
                         key={dropdownItem.name}

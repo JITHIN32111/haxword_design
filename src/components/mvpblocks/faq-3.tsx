@@ -116,33 +116,34 @@ function FAQItem({ question, answer, index }: FAQItemProps) {
 }
 
 export default function Faq3() {
-  const faqs: Omit<FAQItemProps, 'index'>[] = [
-    {
-      question: 'What makes MVPBlocks unique?',
-      answer:
-        "MVPBlocks stands out through its intuitive design, powerful component library, and seamless integration options. We've focused on creating a user experience that combines simplicity with advanced features, all while maintaining excellent performance and accessibility.",
-    },
-    {
-      question: 'How can I customize the components?',
-      answer:
-        'All components are built with Tailwind CSS, making them highly customizable. You can modify colors, spacing, typography, and more by simply adjusting the class names or using our theme variables to match your brand identity.',
-    },
-    {
-      question: 'Do the components work with dark mode?',
-      answer:
-        "Yes, all MVPBlocks components are designed to work seamlessly with both light and dark modes. They automatically adapt to your site's theme settings, providing a consistent user experience regardless of the user's preference.",
-    },
-    {
-      question: 'How can I get started with MVPBlocks?',
-      answer:
-        'You can get started by browsing our component library and copying the code for the components you need. Our documentation provides clear instructions for installation and usage, and you can always reach out to our support team if you need assistance.',
-    },
-    {
-      question: 'Can I use MVPBlocks for commercial projects?',
-      answer:
-        'Absolutely! MVPBlocks is free to use for both personal and commercial projects. There are no licensing fees or attribution requirements—just build and launch your MVP faster than ever before.',
-    },
-  ];
+const faqs: Omit<FAQItemProps, 'index'>[] = [
+  {
+    question: 'What services does your agency provide?',
+    answer:
+      'We offer end-to-end software development services including web and mobile app development, UI/UX design, and product consultation. We also run a training institute with real-time project exposure and placement assistance.',
+  },
+  {
+    question: 'How does the training program work?',
+    answer:
+      'Our training programs are designed with industry relevance in mind. You’ll learn through hands-on projects, mentorship from professionals, and get access to internship or placement opportunities upon completion.',
+  },
+  {
+    question: 'Can I work on live projects during the course?',
+    answer:
+      'Yes! As part of our curriculum, students get the chance to work on real client projects handled by our agency. This bridges the gap between learning and industry readiness.',
+  },
+  {
+    question: 'Is there placement support available?',
+    answer:
+      'Definitely. We offer placement assistance through our network of hiring partners and provide interview preparation, resume building, and mock interview sessions.',
+  },
+  {
+    question: 'Do you provide customized software solutions?',
+    answer:
+      'Yes, we build tailored software solutions based on client needs. Whether it’s a startup MVP or a scalable enterprise product, we handle the entire development lifecycle.',
+  },
+];
+
 
   return (
     <section className="bg-black relative w-full overflow-hidden py-16">
