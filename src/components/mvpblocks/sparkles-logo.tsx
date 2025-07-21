@@ -2,7 +2,7 @@ import { SparklesCore } from '../ui/sparkles';
 
 export default function Page() {
   return (
-    <div className="h-screen w-screen pb-24 overflow-hidden bg-black">
+    <div className="h-screen relative w-screen -mt-24 pb-48 overflow-hidden bg-black">
       <div className="mx-auto mt-32 w-screen max-w-2xl">
         <div className="text-center text-3xl text-white">
           <span className="text-rose-200">Trusted by developers.</span>
@@ -27,7 +27,7 @@ export default function Page() {
             </p>
           </div>
 
-          <div className="mt-12 grid grid-cols-3 gap-6 text-center">
+          <div className="mt-10 grid grid-cols-3 gap-6 text-center">
             <div className="bg-gray-800/50 rounded-lg p-4 backdrop-blur-sm">
               <div className="text-rose-400 text-2xl font-bold">24/7</div>
               <div className="text-gray-300 text-xs mt-1">Support Available</div>
@@ -52,6 +52,8 @@ export default function Page() {
           className="absolute inset-x-0 bottom-0 h-full w-full [mask-image:radial-gradient(50%_50%,white,transparent_85%)]"
         />
       </div>
+       <div className="absolute inset-x-0 top-0 h-12 bg-gradient-to-b from-black via-black/80 to-transparent z-20 pointer-events-none" />
+      <div className="absolute inset-x-0 bottom-0 h-1 bg-gradient-to-t from-black via-black/80 to-transparent z-20 pointer-events-none" />
     </div>
   );
 }

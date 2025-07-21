@@ -86,7 +86,7 @@ const cards = [
 const CardComponent = ({ card, index }) => (
   <div
     key={index}
-    className="flex-shrink-0 w-96 h-32 mx-3 bg-gradient-to-br from-gray-950 via-gray-900 to-[#3b0a0f] backdrop-blur-sm rounded-xl p-6 border border-gray-800/50 shadow-2xl"
+    className="flex-shrink-0 w-96 h-32 mx-3 bg-gradient-to-br from-gray-950 via-black to-red-950 backdrop-blur-sm rounded-xl p-6 border border-gray-800/50 shadow-2xl"
   >
     <div className="flex items-start space-x-3 h-full">
       <img

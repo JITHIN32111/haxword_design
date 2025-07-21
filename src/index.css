@@ -118,3 +118,62 @@
     @apply bg-background text-foreground;
   }
 }
+/* Add these classes to your CSS file or in a <style> tag */
+
+.running-border-mission {
+  position: relative;
+  background: linear-gradient(135deg, rgba(0,0,0,0.8), rgba(20,20,20,0.9));
+}
+
+.running-border-mission::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  padding: 2px;
+  background: linear-gradient(45deg, 
+    #ff0080, #ff8000, #ffff00, #80ff00, 
+    #00ff80, #0080ff, #8000ff, #ff0080
+  );
+  background-size: 400% 400%;
+  border-radius: inherit;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: xor;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  animation: runningBorder 3s linear infinite;
+}
+
+.running-border-vision {
+  position: relative;
+  background: linear-gradient(135deg, rgba(0,0,0,0.8), rgba(20,20,20,0.9));
+}
+
+.running-border-vision::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  padding: 2px;
+  background: linear-gradient(-45deg, 
+    #8000ff, #0080ff, #00ff80, #80ff00, 
+    #ffff00, #ff8000, #ff0080, #8000ff
+  );
+  background-size: 400% 400%;
+  border-radius: inherit;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: xor;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  animation: runningBorder 3s linear infinite reverse;
+}
+
+@keyframes runningBorder {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
