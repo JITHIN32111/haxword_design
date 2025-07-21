@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import Header from './components/Header'
 import Sparkle from './components/mvpblocks/sparkles-logo'
 import Footer from './components/Footer'
-
+import Blogs from './components/Blogs'
 import Faq from './components/mvpblocks/faq-3';
 // import AboutUs1 from './components/mvpblocks/about-us-1'
 // import FeatureSteps from './components/mvpblocks/feature-2'
@@ -247,6 +247,7 @@ export default function Globe3D() {
     </section>
     <Sparkle/>
     <Faq/>
+    <Blogs/>
     <Contact/>
     <Footer/>
   
