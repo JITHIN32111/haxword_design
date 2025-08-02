@@ -1,5 +1,5 @@
 'use client';
-
+import emailjs from 'emailjs-com';
 import { useState, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Input } from '@/components/ui/input';
@@ -7,6 +7,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
 import { Label } from '@/components/ui/label';
 import { Check, Loader2 } from 'lucide-react';
+import toast from 'react-hot-toast';
 
 import Earth from '@/components/ui/globe';
 import { SparklesCore } from '@/components/ui/sparkles';
@@ -18,32 +19,64 @@ export default function ContactUs1() {
   const [message, setMessage] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [errors, setErrors] = useState({});
 
   const formRef = useRef(null);
   const isInView = useInView(formRef, { once: true, amount: 0.3 });
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
+ const handleSubmit = async (e) => {
+  e.preventDefault();
 
-    try {
-      // Perform form submission logic here
-      console.log('Form submitted:', { name, email, mobile, message });
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-      setName('');
-      setEmail('');
-      setMobile('');
-      setMessage('');
-      setIsSubmitted(true);
-      setTimeout(() => {
-        setIsSubmitted(false);
-      }, 5000);
-    } catch (error) {
-      console.error('Error submitting form:', error);
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
+  const newErrors = {};
+  if (!name.trim()) newErrors.name = 'Name is required';
+  if (!email.trim()) {
+    newErrors.email = 'Email is required';
+  } else if (!/^\S+@\S+\.\S+$/.test(email)) {
+    newErrors.email = 'Invalid email format';
+  }
+  if (!mobile.trim()) {
+    newErrors.mobile = 'Mobile number is required';
+  } else if (!/^\d{10}$/.test(mobile)) {
+    newErrors.mobile = 'Mobile number must be 10 digits';
+  }
+  if (!message.trim()) newErrors.message = 'Message is required';
+
+  if (Object.keys(newErrors).length > 0) {
+    setErrors(newErrors);
+    toast.error('Please fill all fields correctly.');
+    return;
+  }
+
+  setErrors({});
+  setIsSubmitting(true);
+
+  try {
+    const result = await emailjs.send(
+      'service_nrxu5qe',
+      'template_2yfprii',
+      { name, email, mobile, message },
+      'Eon2qLoo4y96jqVSG'
+    );
+
+    console.log(result.text);
+    setName('');
+    setEmail('');
+    setMobile('');
+    setMessage('');
+    setIsSubmitted(true);
+    toast.success('Message sent successfully!');
+
+    setTimeout(() => setIsSubmitted(false), 5000);
+  } catch (error) {
+    console.error('Error sending email:', error);
+    toast.error('Failed to send message. Please try again later.');
+  } finally {
+    setIsSubmitting(false);
+  }
+};
+
+
+
 
   return (
     <section className="bg-black relative w-full overflow-hidden py-16 md:py-24">
@@ -108,6 +141,8 @@ export default function ContactUs1() {
                       required
                       className="bg-gray-900/50 border-gray-600 text-white placeholder:text-gray-400"
                     />
+                    {errors.name && <p className="text-red-500 text-sm">{errors.name}</p>}
+
                   </motion.div>
 
                   <motion.div
@@ -126,6 +161,8 @@ export default function ContactUs1() {
                       required
                       className="bg-gray-900/50 border-gray-600 text-white placeholder:text-gray-400"
                     />
+                    {errors.email && <p className="text-red-500 text-sm">{errors.email}</p>}
+
                   </motion.div>
                 </div>
 
@@ -138,13 +175,15 @@ export default function ContactUs1() {
                   <Label htmlFor="mobile" className="text-white">Mobile Number</Label>
                   <Input
                     id="mobile"
-                    type="tel"
+                    type="number"
                     value={mobile}
                     onChange={(e) => setMobile(e.target.value)}
                     placeholder="Enter your mobile number"
                     required
-                    className="bg-gray-900/50 border-gray-600 text-white placeholder:text-gray-400"
+                    className="bg-gray-900/50  border-gray-600 text-white placeholder:text-gray-400"
                   />
+                  {errors.mobile && <p className="text-red-500 text-sm">{errors.mobile}</p>}
+
                 </motion.div>
 
                 <motion.div
@@ -162,6 +201,8 @@ export default function ContactUs1() {
                     required
                     className="h-32 resize-none bg-gray-900/50 border-gray-600 text-white placeholder:text-gray-400"
                   />
+                  {errors.message && <p className="text-red-500 text-sm">{errors.message}</p>}
+
                 </motion.div>
 
                 <motion.div
@@ -200,7 +241,7 @@ export default function ContactUs1() {
             >
               <div className="flex flex-col items-center justify-center overflow-hidden">
                 <article className="relative mx-auto h-[350px] min-h-60 max-w-[450px] overflow-hidden rounded-3xl border border-gray-500 bg-gradient-to-b from-gray-900 to-black p-6 text-3xl tracking-tight text-gray-200 md:h-[450px] md:min-h-80 md:p-8 md:text-4xl md:leading-[1.05] lg:text-5xl">
-Transforming your ideas into smart software                 <div className="absolute -right-20 -bottom-20 z-10 mx-auto flex h-full w-full max-w-[300px] items-center justify-center transition-all duration-700 hover:scale-105 md:-right-28 md:-bottom-28 md:max-w-[550px]">
+                  Transforming your ideas into smart software                 <div className="absolute -right-20 -bottom-20 z-10 mx-auto flex h-full w-full max-w-[300px] items-center justify-center transition-all duration-700 hover:scale-105 md:-right-28 md:-bottom-28 md:max-w-[550px]">
                     <Earth
                       scale={1.1}
                       baseColor={[0.4, 0.05, 0.05]}

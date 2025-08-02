@@ -1,47 +1,50 @@
 'use client';
 
+
+import { motion } from 'framer-motion';
+
 import {
   Code,
-  Terminal,
+  Smartphone,
   Paintbrush,
-  Rocket,
-  Book,
-  PlusCircle,
+  ShoppingCart,
+  Settings,
+  Book
 } from 'lucide-react';
-import { motion } from 'framer-motion';
 
 const features = [
   {
     icon: <Code className="h-6 w-6" />,
-    title: 'End-to-End Development',
-    desc: 'We offer full-cycle software development: planning, design, development, and support for startups and enterprises.',
+    title: 'Web Development',
+    desc: 'We build fast, scalable, and modern web applications tailored to your business needs using the latest web technologies.',
   },
   {
-    icon: <Terminal className="h-6 w-6" />,
-    title: 'Custom ERP Solutions',
-    desc: 'Build scalable ERP systems tailored to your business processes, helping you streamline operations and boost productivity.',
+    icon: <Smartphone className="h-6 w-6" />,
+    title: 'Mobile App Development',
+    desc: 'Create powerful native and hybrid apps for iOS and Android platforms that offer great performance and user experience.',
   },
   {
     icon: <Paintbrush className="h-6 w-6" />,
     title: 'UI/UX Design',
-    desc: 'Our design team creates clean, user-centric interfaces that deliver a seamless experience across all devices.',
+    desc: 'Our design team crafts clean, intuitive, and user-focused interfaces for both web and mobile applications.',
   },
   {
-    icon: <Rocket className="h-6 w-6" />,
-    title: 'eCommerce Platforms',
-    desc: 'From marketplaces to custom stores, we develop robust, scalable eCommerce solutions integrated with modern tech stacks.',
+    icon: <ShoppingCart className="h-6 w-6" />,
+    title: 'E-commerce Solutions',
+    desc: 'We develop custom online stores and marketplaces with secure payment gateways and optimized performance.',
+  },
+  {
+    icon: <Settings className="h-6 w-6" />,
+    title: 'Custom Software Development',
+    desc: 'Tailored software solutions built to solve your unique business challenges and scale with your growth.',
   },
   {
     icon: <Book className="h-6 w-6" />,
     title: 'Maintenance & Support',
-    desc: 'Post-launch, we ensure your platform is secure, up-to-date, and scalable with ongoing support and improvements.',
-  },
-  {
-    icon: <PlusCircle className="h-6 w-6" />,
-    title: 'Consulting & Strategy',
-    desc: 'Not sure where to begin? We help you align business goals with the right tech roadmap for your digital product.',
+    desc: 'We provide continuous monitoring, updates, and technical support to ensure your product runs smoothly post-launch.',
   },
 ];
+
 
 export default function Feature1() {
   return (
@@ -57,7 +60,7 @@ export default function Feature1() {
             viewport={{ once: true }}
           >
             <h3 className="font-geist text-gray-300 mt-4 text-3xl font-normal tracking-tighter sm:text-4xl md:text-5xl">
-                Build with <span className='text-transparent bg-clip-text bg-gradient-to-r from-red-100 via-red-200 to-red-300 font-medium'>Hoxword</span> 
+                Build with <span className='text-transparent bg-clip-text bg-gradient-to-r from-red-100 via-red-200 to-red-300 font-medium'>HAXORD</span> 
             </h3>
             <p className="font-geist text-gray-300 mt-3">
               We’re a software development company helping businesses innovate

@@ -1,4 +1,5 @@
 'use client';
+import img from '../assets/Haxord-V7-png-black-v1.png'
 
 export default function FooterGlow() {
   return (
@@ -11,31 +12,18 @@ export default function FooterGlow() {
       <div className="glass relative mx-auto flex max-w-6xl flex-col items-center gap-8 rounded-2xl px-6 py-10 md:flex-row md:items-start md:justify-between md:gap-12">
         <div className="flex flex-col items-center md:items-start">
           <a href="#" className="mb-4 flex items-center gap-2">
-            <span className="flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-rose-400 to-rose-700 text-2xl font-extrabold text-white shadow-md">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                className="h-5 w-5"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M13 10V3L4 14h7v7l9-11h-7z"
-                />
-              </svg>
-            </span>
+              <div className="flex  h-6 w-6 items-center justify-center rounded-lg bg-gradient-to-br from-rose-500 to-rose-700">
+               <img src={img} alt="" className='h-8 w-12' />
+              </div>
+
             <span className="bg-gradient-to-br from-rose-200 to-rose-500 bg-clip-text text-xl font-semibold tracking-tight text-transparent">
-              HAXWORD
+              HAXORD
             </span>
           </a>
-          <p className="text-gray-300 mb-6 max-w-xs text-center text-sm md:text-left">
-            Mvpblocks provides a set of reusable components and utilities to
-            help you create beautiful and responsive user interfaces quickly and
-            efficiently.
-          </p>
+     <p className="text-gray-300 mb-6 max-w-xs text-center text-sm md:text-left">
+  We build scalable, secure, and high-performance digital solutions tailored to your business needs—from concept to deployment. Empowering innovation through custom software development.
+</p>
+
           <div className="mt-2 flex gap-3 text-rose-400">
             <a
               href="#"
@@ -64,94 +52,56 @@ export default function FooterGlow() {
                 <path d="M19 0h-14a5 5 0 00-5 5v14a5 5 0 005 5h14a5 5 0 005-5v-14a5 5 0 00-5-5zm-11 19h-3v-9h3zm-1.5-10.268a1.752 1.752 0 110-3.505 1.752 1.752 0 010 3.505zm15.5 10.268h-3v-4.5c0-1.07-.02-2.450-1.492-2.450-1.495 0-1.725 1.166-1.725 2.372v4.578h-3v-9h2.88v1.23h.04a3.157 3.157 0 012.847-1.568c3.042 0 3.605 2.003 3.605 4.612v4.726z" />
               </svg>
             </a>
+
+
+
+            <a
+  href="https://www.instagram.com/haxordtechnologies/"
+  aria-label="Instagram"
+  className="hover:text-foreground transition"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <svg
+    className="h-5 w-5"
+    fill="currentColor"
+    viewBox="0 0 24 24"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path d="M7.75 2h8.5A5.75 5.75 0 0122 7.75v8.5A5.75 5.75 0 0116.25 22h-8.5A5.75 5.75 0 012 16.25v-8.5A5.75 5.75 0 017.75 2zm0 1.5A4.25 4.25 0 003.5 7.75v8.5A4.25 4.25 0 007.75 20.5h8.5a4.25 4.25 0 004.25-4.25v-8.5A4.25 4.25 0 0016.25 3.5h-8.5zm4.25 3.25a5.25 5.25 0 110 10.5 5.25 5.25 0 010-10.5zm0 1.5a3.75 3.75 0 100 7.5 3.75 3.75 0 000-7.5zm5.25-.25a.75.75 0 110 1.5.75.75 0 010-1.5z" />
+  </svg>
+</a>
+
           </div>
         </div>
-        <nav className="flex w-full flex-col gap-9 text-center md:w-auto md:flex-row md:justify-end md:text-left">
-          <div>
-            <div className="mb-3 text-xs font-semibold tracking-widest text-rose-400 uppercase">
-              Product
-            </div>
-            <ul className="space-y-2">
-              <li>
-                <a href="#" className="text-gray-300">
-                  Features
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-300">
-                  Pricing
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-300">
-                  Integrations
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-300">
-                  Updates
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <div className="mb-3 text-xs font-semibold tracking-widest text-rose-400 uppercase">
-              Company
-            </div>
-            <ul className="space-y-2 text-white">
-              <li>
-                <a href="#" className="text-gray-300">
-                  About
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-300">
-                  Careers
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-300">
-                  Blog
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-300">
-                  Contact
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <div className="mb-3 text-xs font-semibold tracking-widest text-rose-400 uppercase">
-              Resources
-            </div>
-            <ul className="space-y-2">
-              <li>
-                <a href="#" className="text-gray-300">
-                  Docs
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-300">
-                  Community
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-300">
-                  Support
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-300">
-                  Security
-                </a>
-              </li>
-            </ul>
-          </div>
-        </nav>
+       <nav className="flex w-full flex-col gap-9 text-center md:w-auto md:flex-row md:justify-end md:text-left">
+  <div>
+    <div className="mb-3 text-xs font-semibold tracking-widest text-rose-400 uppercase">
+      Company
+    </div>
+    <ul className="space-y-2">
+      <li><a href="#" className="text-gray-300">About Us</a></li>
+      <li><a href="#" className="text-gray-300">Mission</a></li>
+      <li><a href="#" className="text-gray-300">Vision</a></li>
+      <li><a href="#" className="text-gray-300">Services</a></li>
+    </ul>
+  </div>
+
+  <div>
+    <div className="mb-3 text-xs font-semibold tracking-widest text-rose-400 uppercase">
+      Explore
+    </div>
+    <ul className="space-y-2">
+      <li><a href="#" className="text-gray-300">Features</a></li>
+      <li><a href="#" className="text-gray-300">FAQ</a></li>
+      <li><a href="#" className="text-gray-300">Blog</a></li>
+    </ul>
+  </div>
+</nav>
+
       </div>
       <div className="text-foreground relative z-10 mt-10 text-center text-xs">
-        <span>&copy; 2025 Mvpblocks. All rights reserved.</span>
+        <span>&copy; 2025 Haxord. All rights reserved.</span>
       </div>
     </footer>
   );

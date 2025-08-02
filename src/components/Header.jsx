@@ -1,58 +1,70 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, ChevronDown, ArrowRight, Sparkles } from 'lucide-react';
+import img from '../assets/Haxord-V7-png-black-v1.png'
+// const navItems = [
+//   { name: 'Home', href: '/' },
+//   { name: 'About', href: '/about' }, // Software development services
+//   { name: 'Faq', href: '/faq' }, // Software development services
+//   { name: 'Blog', href: '/blogs' }, // Software development services
+//   { name: 'Contact Us', href: '/contact' }, // Software development services
+
+
+//   // {
+//   //   name: 'Solutions',
+//   //   href: '/solutions',
+//   //   hasDropdown: false,
+//   //   dropdownItems: [
+//   //     {
+//   //       name: 'Web Development',
+//   //       href: '/solutions/web-development',
+//   //       description: 'Custom web applications tailored to your business',
+//   //     },
+//   //     {
+//   //       name: 'Mobile Apps',
+//   //       href: '/solutions/mobile-apps',
+//   //       description: 'iOS and Android solutions',
+//   //     },
+//   //     {
+//   //       name: 'UI/UX Design',
+//   //       href: '/solutions/ui-ux',
+//   //       description: 'Modern interfaces with a user-first approach',
+//   //     },
+//   //   ],
+//   // },
+//   // {
+//   //   name: 'Institute',
+//   //   href: '/institute',
+//   //   hasDropdown: false,
+//   //   dropdownItems: [
+//   //     {
+//   //       name: 'Courses',
+//   //       href: '/institute/courses',
+//   //       description: 'Frontend, Backend, Full-stack, DevOps & more',
+//   //     },
+//   //     {
+//   //       name: 'Mentorship',
+//   //       href: '/institute/mentorship',
+//   //       description: 'One-on-one guidance from industry experts',
+//   //     },
+//   //     {
+//   //       name: 'Live Projects',
+//   //       href: '/institute/live-projects',
+//   //       description: 'Real-world experience with company projects',
+//   //     },
+//   //   ],
+//   // },
+//   // { name: 'Careers', href: '/careers' },
+//   // { name: 'About Us', href: '/about' },
+// ];
 
 const navItems = [
   { name: 'Home', href: '/' },
-  { name: 'Services', href: '/services' }, // Software development services
-  {
-    name: 'Solutions',
-    href: '/solutions',
-    hasDropdown: true,
-    dropdownItems: [
-      {
-        name: 'Web Development',
-        href: '/solutions/web-development',
-        description: 'Custom web applications tailored to your business',
-      },
-      {
-        name: 'Mobile Apps',
-        href: '/solutions/mobile-apps',
-        description: 'iOS and Android solutions',
-      },
-      {
-        name: 'UI/UX Design',
-        href: '/solutions/ui-ux',
-        description: 'Modern interfaces with a user-first approach',
-      },
-    ],
-  },
-  {
-    name: 'Institute',
-    href: '/institute',
-    hasDropdown: true,
-    dropdownItems: [
-      {
-        name: 'Courses',
-        href: '/institute/courses',
-        description: 'Frontend, Backend, Full-stack, DevOps & more',
-      },
-      {
-        name: 'Mentorship',
-        href: '/institute/mentorship',
-        description: 'One-on-one guidance from industry experts',
-      },
-      {
-        name: 'Live Projects',
-        href: '/institute/live-projects',
-        description: 'Real-world experience with company projects',
-      },
-    ],
-  },
-  { name: 'Careers', href: '/careers' },
-  { name: 'About Us', href: '/about' },
+  { name: 'About', href: '#about' },
+  { name: 'Services', href: '#services' },
+  { name: 'Faq', href: '#faq' },
+  { name: 'Blog', href: '#blog' },
+  { name: 'Contact Us', href: '#contact' },
 ];
-
-
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -91,10 +103,21 @@ export default function Header() {
     boxShadow: isScrolled ? '0 8px 32px rgba(0, 0, 0, 0.1)' : 'none',
   });
 
-  const handleLinkClick = (href) => {
-    console.log(`Navigating to: ${href}`);
-    setIsMobileMenuOpen(false);
-  };
+const handleLinkClick = (href) => {
+  setIsMobileMenuOpen(false);
+
+  if (href.startsWith('#')) {
+    const sectionId = href.replace('#', '');
+    const el = document.getElementById(sectionId);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  } else {
+    // For full-page navigation (if needed)
+    window.location.href = href;
+  }
+};
+
 
   return (
     <header
@@ -110,10 +133,10 @@ export default function Header() {
               className="flex items-center space-x-2"
             >
               <div className="flex h-6 w-6 items-center justify-center rounded-lg bg-gradient-to-br from-rose-500 to-rose-700">
-                <Sparkles className="h-4 w-4 text-white" />
+               <img src={img} alt="" className='h-8 w-12' />
               </div>
               <span className="bg-gradient-to-r from-rose-500 to-rose-700 bg-clip-text text-lg font-bold text-transparent">
-                HAXWORD
+                HAXORD
               </span>
             </div>
           </div>
